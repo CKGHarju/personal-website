@@ -1,9 +1,15 @@
 {
-  "name": "create-next-example-app",
-  "description": "A Next.js starter app.",
+  "name": "personal-website",
+  "description": "personal website and portfolio",
+  "homepage": "https://christopherharju.com",
+  "author": {
+    "name": "Christopher Harju",
+    "email": "chrharju@gmail.com",
+    "url": "https://christopherharju.com"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeit/now/tree/master/examples/nextjs"
+    "url": "https://github.com/CKGHarju/personal-website"
   },
   "license": "MIT",
   "scripts": {
