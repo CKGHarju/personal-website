@@ -4,7 +4,7 @@ import Head from '../components/head';
 import Nav from '../components/nav';
 import fetch from 'isomorphic-unfetch'
 
-const Home = ({ stars }) => {
+const Home = ({ renderDate }) => {
   const [date, setDate] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Home = ({ stars }) => {
     <div>
       <Head title="Home" />
       <Nav />
-      <div>Next stars: {stars}</div>
+      <div>Time of server side render: {renderDate}</div>
 
       <div className="hero">
         <h1 className="title">Hello world and such ..</h1>
@@ -30,7 +30,7 @@ const Home = ({ stars }) => {
         </p>
 
         <p className="row date">
-          The date is:&nbsp;{' '}
+          Time of client side render:&nbsp;{' '}
           {date ? (
             <span>
               <b>{date.date}</b>
@@ -143,10 +143,9 @@ const Home = ({ stars }) => {
 };
 
 Home.getInitialProps = async () => {
-  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const res = await fetch('https://worldtimeapi.org/api/timezone/Europe/Madrid')
   const json = await res.json()
-  console.log(json)
-  return { stars: json.stargazers_count }
+  return { renderDate: json.utc_datetime }
 }
 
 export default Home;
