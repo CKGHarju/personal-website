@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from '../components/head';
 import Nav from '../components/nav';
+import fetch from 'isomorphic-unfetch'
 
-const Home = () => {
+const Home = ({ stars }) => {
   const [date, setDate] = useState(null);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const Home = () => {
     <div>
       <Head title="Home" />
       <Nav />
+      <div>Next stars: {stars}</div>
 
       <div className="hero">
         <h1 className="title">Hello world and such ..</h1>
@@ -139,5 +141,12 @@ const Home = () => {
     </div>
   );
 };
+
+Home.getInitialProps = async () => {
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  console.log(json)
+  return { stars: json.stargazers_count }
+}
 
 export default Home;
