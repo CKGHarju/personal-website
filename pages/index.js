@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import React from 'react';
 import Head from 'next/head'
-import Nav from '../components/nav';
-import fetch from 'isomorphic-unfetch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
@@ -27,7 +24,7 @@ const Home = () => {
               </p>
             </div>
             <div className="top-section-image">
-              <img className='profile-picture' src='images/christopher-harju.png' alt='profile picture of christopher harju'/>
+              <img className='profile-picture' src='images/christopher_harju.png' alt='profile picture of christopher harju'/>
             </div>
             <div className="top-section-contact">
               <div className='contact-item'>
