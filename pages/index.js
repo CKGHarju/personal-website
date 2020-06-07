@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, faResearchgate } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faMobileAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
 
@@ -28,6 +28,14 @@ const Home = () => {
             </div>
             <div className="top-section-contact">
               <div className='contact-item'>
+                <FontAwesomeIcon color='#cba135' icon={faBriefcase} size='lg'/>
+                <a className='contact-link' href="https://www.devex.com/">Software Engineer @Devex.com</a>
+              </div>
+              <div className='contact-item'>
+                <FontAwesomeIcon color='#cba135' icon={faBriefcase} size='lg'/>
+                <a className='contact-link' href="https://codeworks.me/software-engineering-bootcamp/">Instructor @Codeworks.me</a>
+              </div>
+              <div className='contact-item'>
                 <FontAwesomeIcon icon={faGithub} size='lg'/>
                 <a className='contact-link' href="http://github.com/CKGHarju">github.com/CKGHarju</a>
               </div>
@@ -43,6 +51,10 @@ const Home = () => {
                 <FontAwesomeIcon icon={faMobileAlt} size='lg'/>
                 <a className='contact-link' href="tel:+358403724121">+358 40 372 4121</a>
               </div>
+              <div className='contact-item'>
+                <FontAwesomeIcon icon={faResearchgate} size='lg'/>
+                <a className='contact-link' href="https://www.researchgate.net/profile/Christopher_Harju">Scientific publications</a>
+              </div>
             </div>
           </div>
         </div>
@@ -52,12 +64,13 @@ const Home = () => {
         :global(body) {
           margin: 0;
           font-family: 'Ubuntu';
-          font-size: 16px;
+          font-size: 24px;
         }
 
         h1 {
           font-style: normal;
           font-weight: 400;
+          color: #CBA135;
         }
 
         h3 {
@@ -65,26 +78,34 @@ const Home = () => {
           font-weight: 400;
         }
 
-        @media (min-width: 400px) and (max-width: 850px) {
+        @media (max-width: 800px) {
           /* For mobile phones: */
           .long-text {
-            max-width: 400px;
+            max-width: 800px;
           }
         }
 
-        @media (min-width: 851px) and (max-width: 1000px) {
+        @media (min-width: 801px) and (max-width: 1050px) {
           /* For mobile phones: */
           .long-text {
-            max-width: 600px;
+            max-width: 500px;
           }
         }
 
-        @media only screen and (min-width: 1001px) {
+        @media only screen and (min-width: 1051px) and (max-width: 1400px) {
           /* For mobile phones: */
           .long-text {
             max-width: 700px;
           }
         }
+
+        @media only screen and (min-width: 1401px) {
+          /* For mobile phones: */
+          .long-text {
+            max-width: 1050px;
+          }
+        }
+
 
         /* desktop mode */
         .page-container {
@@ -102,24 +123,24 @@ const Home = () => {
         .top-section-contact {
           width: 100vw;
           display: flex;
-          justify-content: space-between;
+          /* justify-content: space-between; */
           flex-wrap: wrap;
         }
 
         .contact-link {
           padding-left: 10px;
           text-decoration: none;
-          color: white;
+          color: #F3EFE0;
         }
 
         .contact-item {
+          font-size: 20px;
           padding-top: 15px;
           padding-right: 30px;
         }
 
-
         .top-section {
-          color: white;
+          color: #F3EFE0;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
@@ -130,8 +151,8 @@ const Home = () => {
 
         .profile-picture {
           border-radius: 50%;
-          height: 192px;
-          width: 192px;
+          height: 252px;
+          width: 252px;
         }
 
         .top-section-image {
